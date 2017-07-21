@@ -1,4 +1,4 @@
-# Very simple users, used to understand the usage of variables
+# Very simple program, used to understand the usage of variables
 
 greetingVar = "Hello World"
 
