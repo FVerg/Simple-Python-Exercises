@@ -1,4 +1,4 @@
-# In this exercise we'll cover the usage of custom functions
+# In this lecture we'll cover the usage of custom functions
 # In the previous lectures, we've already used a lot of functions, but they
 # were already defined by Python itself (print, dir, upper, etc.)
 

@@ -1,4 +1,4 @@
-# In this exercise we'll cover the usage of dictionaries.
+# In this lecture we'll cover the usage of dictionaries.
 # A dictionary is like a list with custom indexes.
 # In lists, Python automatically assigns indexes to the contained items
 # In dictionaries, the indexes are specified by the programmer, and can be

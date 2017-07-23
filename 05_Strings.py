@@ -1,4 +1,4 @@
-# In this exercise we'll cover the usage of strings.
+# In this lecture we'll cover the usage of strings.
 # A string is everything that goes inside quotes "..."
 
 inputString = input ("Insert a string: ")

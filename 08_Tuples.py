@@ -1,4 +1,4 @@
-# In this exercise we'll cover the usage of tuples.
+# In this lecture we'll cover the usage of tuples.
 # Tuples in Python are very similar to lists, but unlike them,
 # TUPLES ARE IMMUTABLE: you can't change its content once defined.
 

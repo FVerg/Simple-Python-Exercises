@@ -1,4 +1,4 @@
-# In this exercise, we'll cover the usage of math operators
+# In this lecture, we'll cover the usage of math operators
 # First of all, let's see how some different operators used together work
 
 result = 20-10/5*3**2
