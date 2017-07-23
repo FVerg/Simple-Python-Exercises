@@ -47,3 +47,47 @@ def minutes_to_hours (minutes):
 inputMinutes = input ("Insert an amount in minutes:")
 outputHours = minutes_to_hours (inputMinutes)
 print ("The corresponding amount in hours is: ", outputHours)
+
+def seconds_to_hours (seconds):
+    return float (seconds)/60/60
+
+inputSeconds = input ("Insert an amount in seconds:")
+outputHours = seconds_to_hours(inputSeconds)
+print ("The corresponding amount in hours is: ", outputHours)
+
+
+# Let's now cover some "advanced" features of functions in Python
+# We can create, for example, a function that converts minutes and seconds
+# to hours:
+
+def minutes_seconds_to_hours (minutes, seconds):
+    return float(minutes)/60 + float(seconds)/3600
+
+inputMinutes = input ("Insert an amount in minutes:")
+inputSeconds = input ("Insert an amount in seconds:")
+outputHours = minutes_seconds_to_hours(inputMinutes, inputSeconds)
+print ("The corresponding amount in hours is: ", outputHours)
+
+# Default arguments: it is possible to create functions that take
+# arguments that cannot be defined by users.
+# ATTENTION: DEFAULT ARGUMENTS MUST BE PASSED AFTER THE STANDARD ARGUMENTS OF
+#            THE FUNCTION. OTHERWISE PYTHON WILL RAISE A SYNTAX ERROR
+
+def minutes_seconds_to_hours_def_arg (seconds, minutes = 60):
+    return float (minutes)/60 + float (seconds)/3600
+
+
+inputSeconds = input ("Insert an amount in seconds:")
+outputHours = minutes_seconds_to_hours_def_arg(inputSeconds)
+print ("The corresponding amount in hours is: ", outputHours)
+
+# If you still pass a second arguments, the default value defined
+# by the default argument will be ignored.
+
+inputMinutes = input ("Insert an amount in minutes:")
+inputSeconds = input ("Insert an amount in seconds:")
+outputHours = minutes_seconds_to_hours_def_arg(inputSeconds, inputMinutes)
+print ("The corresponding amount in hours is: ", outputHours)
+
+# Functions does not always have to return output values.
+# They can return nothing, too.
