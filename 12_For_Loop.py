@@ -25,3 +25,13 @@ for email in emails:
 for email in emails:
     if "gmail" in email:
         print (email)
+
+# Now we are going to cover the usage of for loop with more lists simultaneously
+
+names = ["John", "Jack", "Amber"]
+email_domains = ["gmail.com", "hotmail.com", "yahoo.com"]
+
+for i,j in zip (names, email_domains):
+    print(i,j)
+
+# zip function is used to access two or more lists contemporary
