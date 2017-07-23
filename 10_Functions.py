@@ -38,3 +38,12 @@ input_euros = input ("Insert the amount of euros to convert:")
 output_dollars = currency_converter(1.18, input_euros)
 
 print ("The corresponding amount in dollars is: ", output_dollars)
+
+# Let's define and use some other functions:
+
+def minutes_to_hours (minutes):
+    return float(minutes)/60
+
+inputMinutes = input ("Insert an amount in minutes:")
+outputHours = minutes_to_hours (inputMinutes)
+print ("The corresponding amount in hours is: ", outputHours)
