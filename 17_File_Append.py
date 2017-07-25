@@ -15,3 +15,10 @@ file.close()
 
 # Obviously, in this way each time we execute the program we'll append the content
 # to the file, without deleting the previous contents.
+
+# There are other type of file handling aside from 'w', 'r' and 'a':
+# - 'r+': Opens the file for both read/write. The pointer is at the beginning.
+# - 'w+': Opens the file for both write/read. Overwrites the file if existing.
+# - 'a+': Opens the file for both append/read. The pointer is at the end if the
+#         file exists. If the file does not exists, a new file for write/read
+#         is created.
