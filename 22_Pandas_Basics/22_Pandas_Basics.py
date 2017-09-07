@@ -31,6 +31,7 @@ df1 = pandas.DataFrame([[2,4,6], [10,20,30]], columns = ["Price", "Age", "Value"
 print (df1)
 
 # The index name is not so used, because datasets can have millions of lines
+# and giving name to each line is not possible.
 
 # Now we create a DataFrame of dictionaries
 df2 = pandas.DataFrame ([{"Name":"John", "Surname":"Smith"},{"Name":"Jack", "Surname":"Marshal"}])
