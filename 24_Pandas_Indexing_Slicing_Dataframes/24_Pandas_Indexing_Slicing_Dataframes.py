@@ -85,6 +85,7 @@ print (df1.drop("332 Hill St", 0))
 
 # We can combine indexing and data drop:
 
+# This drops the rows 0,1,2
 print (df1.drop(df1.index[0:3],0))
 
 print (df1.drop(df1.columns[0:3],1)
