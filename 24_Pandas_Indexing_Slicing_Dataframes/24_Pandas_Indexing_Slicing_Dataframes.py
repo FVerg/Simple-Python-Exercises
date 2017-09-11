@@ -72,3 +72,19 @@ print (df1.iloc[1:4,1:4])
 print (df1.i[3,"Name"])
 
 # ix can be used for both index and label indexing.
+
+# In order to DELETE something from a DataFrame, we can do:
+
+print(df1.drop ("City",1))
+
+# The parameter 1 indicates we are going to delete a column
+
+print (df1.drop("332 Hill St", 0))
+
+# The parameter 1 indicates we are going to delete a row
+
+# We can combine indexing and data drop:
+
+print (df1.drop(df1.index[0:3],0))
+
+print (df1.drop(df1.columns[0:3],1)
