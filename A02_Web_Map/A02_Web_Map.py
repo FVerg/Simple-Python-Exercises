@@ -7,7 +7,8 @@
 # Almost everything in Folium spins around a so called map object
 
 import folium
-
+import pandas
+import numpy
 
 # Folium will automatically detect and translate your Python code into
 # Javascript and HTML, in order to use it on the web.
@@ -86,3 +87,40 @@ map.add_child(fg)
 # it more layers and more complex objects.
 
 map.save("Output/Map4.html")
+
+# Now we want the coordinates of multiple markers to be automatically
+# extracted from a txt file, which you can find in the Resources folder.
+
+# To do this you'll need the Pandas library.
+# pip install pandas
+
+input_data = pandas.read_csv("./Resources/Volcanoes.txt")
+
+print (input_data)
+
+# We now need to iterate over the dataframe input_data
+# We want to create two lists:
+# 1: Containing the column of Latitude
+# 2: Containing the column of Longitude
+
+lat = list(input_data["LAT"])
+lon = list(input_data["LON"])
+elev = list (input_data["ELEV"])
+
+print (lat)
+print (lon)
+
+# We want to create one marker for each couple (lat, lon) contained in those 2 lists
+map = folium.Map(location=[43, 13], tiles="Mapbox Bright")
+
+fg = folium.FeatureGroup (name ="My markers")
+
+# Again if you are unconfortable with this loop statement take a look to the
+# lesson "12_For_Loop"
+
+for latitude, longitude, el in zip(lat, lon, elev):
+    fg.add_child(folium.Marker(location = [latitude,longitude], popup = str(el)+" m", icon=folium.Icon(color='red')))
+
+map.add_child(fg)
+
+map.save("Output/Map5.html")
