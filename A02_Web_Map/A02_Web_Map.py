@@ -171,3 +171,17 @@ for latitude, longitude, el in zip(lat, lon, elev):
 map.add_child(fg)
 
 map.save("Output/Map7.html")
+
+# Let's suppose now we want to place on the map some circled markers
+
+map = folium.Map(location=[43,13], tiles="Mapbox Bright")
+
+fg = folium.FeatureGroup(name="My markers")
+
+for latitude, longitude, el in zip (lat, lon, elev):
+    color = calculate_color(el)
+    fg.add_child(folium.CircleMarker(location=[latitude,longitude], popup=str(el)+" m", color = color, fill = True, radius=1))
+
+map.add_child(fg)
+
+map.save("Output/Map8.html")
