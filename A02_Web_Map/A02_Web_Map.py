@@ -124,3 +124,50 @@ for latitude, longitude, el in zip(lat, lon, elev):
 map.add_child(fg)
 
 map.save("Output/Map5.html")
+
+# We want now to add smarter features to the map.
+# We could, for example, change the color of the different markers
+# according to the height of the volcano related to it.
+# GREEN: From 0 to 1000m
+# ORANGE: From 1000 to 2000m
+# RED: More than 2000m
+
+map = folium.Map(location=[43, 13], tiles="Mapbox Bright")
+
+fg = folium.FeatureGroup (name ="My markers")
+
+for latitude, longitude, el in zip(lat, lon, elev):
+    if el < 1000:
+        fg.add_child(folium.Marker(location = [latitude,longitude], popup = str(el)+" m", icon=folium.Icon(color='green')))
+    elif el > 1000 and el < 2000:
+        fg.add_child(folium.Marker(location = [latitude,longitude], popup = str(el)+" m", icon=folium.Icon(color='orange')))
+    else:
+        fg.add_child(folium.Marker(location = [latitude,longitude], popup = str(el)+" m", icon=folium.Icon(color='red')))
+
+map.add_child(fg)
+
+map.save("Output/Map6.html")
+
+# We can also do this by using a function:
+# Input: Elevation
+# Output: Color depending on the Elevation
+
+def calculate_color(elevation):
+    if elevation < 1000:
+        return "green"
+    elif elevation < 2000:
+        return "orange"
+    else:
+        return "red"
+
+map = folium.Map(location=[43, 13], tiles="Mapbox Bright")
+
+fg = folium.FeatureGroup (name ="My markers")
+
+for latitude, longitude, el in zip(lat, lon, elev):
+    color = calculate_color(el)
+    fg.add_child(folium.Marker(location = [latitude,longitude], popup = str(el)+" m", icon=folium.Icon(color=color)))
+
+map.add_child(fg)
+
+map.save("Output/Map7.html")
