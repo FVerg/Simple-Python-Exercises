@@ -113,3 +113,11 @@ if __name__ == "__main__":
 #         web: gunicorn A04_Website_with_Python_and_Flask:app
 #         to tell heroku we are using gunicorn and we want to run the indicated script.
 # Step 8: Create a runtime.txt file. It will contain the python version to run the heroku app.
+#         Heroku supports python-3.6.2 or python-2.7.14. Check it on the website
+#         https://devcenter.heroku.com/articles/python-runtimes because the version could have
+#         been changed from the upload time of this guide.
+# Step 9: Create a git repository (locally first) which will contain the project.
+#         So, from the Demo folder type: "git add ." and then "git commit -m "Whatever yoy want" "
+# Step 10:Push the changes to Heroku: "heroku git:remote --app fvergwebsite"
+#         Everything you apply now on those files wil be applied to the heroku git version.
+#         So, to push: "git push heroku master"
